@@ -4,7 +4,9 @@
 using namespace std;
 void swap(int *x, int *y)
 {
-	
+	int temp = *x;
+	*x = *y;
+	*y = temp;
 }
 
 void selectionSort(int arr[], int size)
@@ -24,12 +26,20 @@ void selectionSort(int arr[], int size)
 	}
 }
 
-
+void print(int arr[], int size)
+{
+	cout << endl;
+	for (int i = 0; i < size - 1; ++i)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+}
 
 int main()
 {
 	int arr[] = { 64, 34, 25, 12, 22, 11, 90 };
-	//here
+	int n = sizeof(arr) / sizeof(arr[0]);
 	cout << "Unsorted array: ";
 	print(arr, n);
 	cout << endl;
